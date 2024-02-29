@@ -1,11 +1,13 @@
-import { GridBackgroundDemo } from "@/components/ui/GridBackground";
-import { BackgroundBeams } from "@/components/ui/background-beams";
+
+import ChatInterface from "@/components/ChatInterface";
+import SideBar from "@/components/SideBar";
 import React from "react";
 
 const page = () => {
   return (
-    <div className="">
-      <GridBackgroundDemo />
+    <div className="w-full h-screen bg-slate-950 flex">
+      <SideBar />
+      <ChatInterface />
     </div>
   );
 };
