@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+
 import express from "express";
 import cors from "cors";
 import {
@@ -6,8 +6,10 @@ import {
   HarmCategory,
   HarmBlockThreshold,
 } from "@google/generative-ai";
-
-dotenv.config();
+// import dotenv from 'dotenv'
+// dotenv.config({
+//   path: '.env'
+// })
 
 const app = express();
 app.use(cors());
@@ -15,6 +17,10 @@ app.use(express.json());
 
 const MODEL_NAME = "gemini-1.0-pro";
 const API_KEY = process.env.GEMINI_API_KEY;
+
+console.log("API_KEY", process.env.GEMINI_API_KEY);
+// console.log("MODEL_NAME", MODEL_NAME);
+
 
 async function runChat(userInput) {
   const genAI = new GoogleGenerativeAI(API_KEY);
