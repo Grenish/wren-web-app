@@ -25,7 +25,9 @@ const ChatInterface = () => {
           clicked ? "w-1/4" : "w-0"
         } h-screen p-2 transition-all duration-150 ease-in-out`}
       >
-        <div className={`w-full h-full glass rounded-xl`}></div>
+        <div className={`w-full h-full glass rounded-xl`}>
+          {/* History */}
+        </div>
       </div>
       <div className="w-full h-screen p-2">
         <div className="w-full h-full glass border rounded-xl">
