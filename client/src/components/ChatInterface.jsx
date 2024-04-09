@@ -4,6 +4,7 @@ import {
   UilAngleRight,
   UilPlusCircle,
   UilPen,
+  UilUser,
 } from "@iconscout/react-unicons";
 
 const ChatInterface = () => {
@@ -12,11 +13,9 @@ const ChatInterface = () => {
     return saved === "true" ? true : false;
   });
 
-
   const handleClick = () => {
     setClicked(!clicked);
   };
-
 
   return (
     <div className="w-full h-screen background flex">
@@ -25,8 +24,22 @@ const ChatInterface = () => {
           clicked ? "w-1/4" : "w-0"
         } h-screen p-2 transition-all duration-150 ease-in-out`}
       >
-        <div className={`w-full h-full glass rounded-xl`}>
+        <div
+          className={`w-full h-full glass rounded-xl flex flex-col justify-between`}
+        >
           {/* History */}
+          <div className=" h-full overflow-scroll">
+            <div className="px-2 pt-2">
+              <span className="text-sm text-gray-300">Today</span>
+            </div>
+            <div className="pl-2 pt-3">
+              <span className="text-gray-200">lorem ipsum</span>
+            </div>
+          </div>
+          {/* Account */}
+          <div className="flex items-center text-white p-2 bg-rose-500">
+            <UilUser size={20} /> <span className="ml-2">John Doe</span>
+          </div>
         </div>
       </div>
       <div className="w-full h-screen p-2">
@@ -45,11 +58,7 @@ const ChatInterface = () => {
               ) : (
                 <button className="flex items-center justify-center text-gray-200 hover:bg-slate-800 px-2 rounded-xl">
                   <UilPlusCircle size="15" color="white" />
-                  <span
-                    className="ml-1 text-sm"
-                  >
-                    Title
-                  </span>
+                  <span className="ml-1 text-sm">Title</span>
                 </button>
               )}
             </div>
